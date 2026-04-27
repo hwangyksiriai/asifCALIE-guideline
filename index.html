@@ -140,12 +140,9 @@
       border-bottom: 1px solid var(--border);
     }
     .card-icon {
-      width: 34px; height: 34px;
-      border-radius: 9px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 16px;
+      width: 20px; height: 1px;
+      background: var(--text-muted);
       flex-shrink: 0;
-      background: var(--surface-2);
     }
     .card-header-title {
       font-size: 14px;
@@ -153,6 +150,16 @@
       color: var(--text-primary);
       letter-spacing: -0.3px;
       font-family: 'Noto Serif KR', serif;
+      line-height: 1.2;
+    }
+    .card-header-sub {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      font-family: 'Noto Sans KR', sans-serif;
+      margin-top: 2px;
     }
     .card-body { padding: 20px; }
     .card-divider {
@@ -479,8 +486,8 @@
   <!-- 브랜드 소개 -->
   <div class="card">
     <div class="card-header">
-      <div class="card-icon">🌴</div>
-      <div class="card-header-title">asif CALIE (애즈이프캘리)</div>
+      <div class="card-icon"></div>
+      <div class="card-header-title">About Brand<span class="card-header-sub">브랜드 소개</span></div>
     </div>
     <div class="card-body">
       <div class="brand-tagline">캘리포니아 감성의 빈티지한 키치 브랜드.</div>
@@ -501,8 +508,8 @@
   <!-- 콜라보 제품 소개 -->
   <div class="card">
     <div class="card-header">
-      <div class="card-icon">👜</div>
-      <div class="card-header-title">콜라보 제품 소개</div>
+      <div class="card-icon"></div>
+      <div class="card-header-title">Collaboration Product<span class="card-header-sub">콜라보 제품 소개</span></div>
     </div>
     <div class="card-body">
       <div style="display:flex; gap:8px; margin-bottom:12px;">
@@ -533,8 +540,8 @@
   <!-- 캠페인 안내 -->
   <div class="card">
     <div class="card-header">
-      <div class="card-icon">🗓️</div>
-      <div class="card-header-title">캠페인 안내</div>
+      <div class="card-icon"></div>
+      <div class="card-header-title">Campaign Info<span class="card-header-sub">캠페인 안내</span></div>
     </div>
     <div class="card-body">
       <div class="info-grid">
@@ -574,8 +581,8 @@
   <!-- 콘텐츠 제작 가이드 -->
   <div class="card">
     <div class="card-header">
-      <div class="card-icon">🎬</div>
-      <div class="card-header-title">이렇게 제작해 주세요</div>
+      <div class="card-icon"></div>
+      <div class="card-header-title">Content Guide<span class="card-header-sub">이렇게 제작해 주세요</span></div>
     </div>
     <div class="card-body">
 
@@ -622,8 +629,8 @@
   <!-- 업로드 가이드 -->
   <div class="card">
     <div class="card-header">
-      <div class="card-icon">📤</div>
-      <div class="card-header-title">이렇게 업로드해 주세요</div>
+      <div class="card-icon"></div>
+      <div class="card-header-title">Upload<span class="card-header-sub">이렇게 업로드해 주세요</span></div>
     </div>
     <div class="card-body">
 
@@ -683,43 +690,43 @@
   <!-- 레퍼런스 영상 -->
   <div class="card" style="margin-bottom: 0;">
     <div class="card-header">
-      <div class="card-icon">🎥</div>
-      <div class="card-header-title">레퍼런스 영상</div>
+      <div class="card-icon"></div>
+      <div class="card-header-title">Reference<span class="card-header-sub">레퍼런스 영상</span></div>
     </div>
     <div class="card-body">
       <div class="ref-links">
         <a class="ref-link" href="https://www.instagram.com/reels/DW0pRaKiXEW/" target="_blank">
           <span class="ref-link-play">▶</span>
           <div class="ref-link-body">
-            <div class="ref-link-title">콘텐츠 1</div>
+            <div class="ref-link-title">예시 콘텐츠 1</div>
           </div>
           <span class="ref-link-arrow">›</span>
         </a>
         <a class="ref-link" href="https://www.instagram.com/p/DV-n0sljuGJ/" target="_blank">
           <span class="ref-link-play">▶</span>
           <div class="ref-link-body">
-            <div class="ref-link-title">콘텐츠 2</div>
+            <div class="ref-link-title">예시 콘텐츠 2</div>
           </div>
           <span class="ref-link-arrow">›</span>
         </a>
         <a class="ref-link" href="https://www.instagram.com/reels/DXB7z7Akif0/" target="_blank">
           <span class="ref-link-play">▶</span>
           <div class="ref-link-body">
-            <div class="ref-link-title">콘텐츠 3</div>
+            <div class="ref-link-title">예시 콘텐츠 3</div>
           </div>
           <span class="ref-link-arrow">›</span>
         </a>
         <a class="ref-link" href="https://www.instagram.com/p/DXWRdkSkzOx/" target="_blank">
           <span class="ref-link-play">▶</span>
           <div class="ref-link-body">
-            <div class="ref-link-title">콘텐츠 4</div>
+            <div class="ref-link-title">예시 콘텐츠 4</div>
           </div>
           <span class="ref-link-arrow">›</span>
         </a>
         <a class="ref-link" href="https://www.instagram.com/reels/DXOiPEikwxk/" target="_blank">
           <span class="ref-link-play">▶</span>
           <div class="ref-link-body">
-            <div class="ref-link-title">콘텐츠 5</div>
+            <div class="ref-link-title">예시 콘텐츠 5</div>
           </div>
           <span class="ref-link-arrow">›</span>
         </a>
