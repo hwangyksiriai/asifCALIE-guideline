@@ -2,13 +2,17 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#CC1C1C">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Esther Bunny × asif CALIE 가이드라인</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     :root {
       --bg: #FFF5F5;
@@ -37,12 +41,17 @@
       line-height: 1.6;
       min-height: 100vh;
       -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .page {
       max-width: 560px;
       margin: 0 auto;
       padding: 1.5rem 1rem 5rem;
+      padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+      padding-left: max(1rem, env(safe-area-inset-left));
+      padding-right: max(1rem, env(safe-area-inset-right));
     }
 
     /* ── Hero ── */
@@ -195,15 +204,14 @@
       background: var(--accent);
       border: 1px solid var(--accent);
       border-radius: var(--radius-sm);
-      padding: 13px 16px;
+      padding: 14px 16px;
+      min-height: 48px;
       text-decoration: none;
       transition: all 0.2s;
+      touch-action: manipulation;
     }
-    .brand-link:hover {
-      background: #A01010;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(204,28,28,0.3);
-    }
+    .brand-link:hover { background: #A01010; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(204,28,28,0.3); }
+    .brand-link:active { background: #A01010; transform: scale(0.98); box-shadow: none; }
     .brand-link-label { flex: 1; font-size: 13px; font-weight: 700; color: #fff; }
     .brand-link-arrow {
       width: 26px; height: 26px;
@@ -362,13 +370,17 @@
     .pill {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: 12px; font-weight: 600;
-      padding: 6px 13px; border-radius: 99px;
+      padding: 10px 14px; border-radius: 99px;
+      min-height: 40px;
       cursor: pointer; transition: all 0.18s; user-select: none;
+      touch-action: manipulation;
     }
     .pill-account { background: var(--accent); border: 1px solid var(--accent); color: #fff; }
     .pill-account:hover { background: #A01010; transform: translateY(-1px); }
+    .pill-account:active { background: #A01010; transform: scale(0.96); }
     .pill-tag { background: var(--surface-2); border: 1px solid var(--border); color: var(--text-secondary); }
     .pill-tag:hover { background: var(--accent-soft); border-color: var(--border-accent); color: var(--accent); transform: translateY(-1px); }
+    .pill-tag:active { background: var(--accent-soft); border-color: var(--border-accent); color: var(--accent); transform: scale(0.96); }
     .pill-copy-icon { font-size: 10px; opacity: 0.55; }
 
     /* ── Notice / Story box ── */
@@ -390,12 +402,15 @@
     .ref-links { display: grid; gap: 6px; }
     .ref-link {
       display: flex; align-items: center; gap: 11px;
-      padding: 11px 14px;
+      padding: 14px 16px;
+      min-height: 52px;
       background: var(--surface-2); border: 1px solid var(--border);
       border-radius: var(--radius-sm); text-decoration: none;
       transition: all 0.18s;
+      touch-action: manipulation;
     }
     .ref-link:hover { background: var(--accent-soft); border-color: var(--border-accent); transform: translateX(2px); }
+    .ref-link:active { background: var(--accent-soft); border-color: var(--border-accent); transform: scale(0.99); }
     .ref-link-num {
       width: 26px; height: 26px; border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
@@ -425,8 +440,21 @@
 
     @media (max-width: 480px) {
       .hero-content { padding: 38px 18px 44px; }
-      .hero-title { font-size: 18px; }
+      .hero-title { font-size: 19px; }
       .card-body { padding: 16px; }
+      .card-header { padding: 14px 16px 12px; }
+      .info-label { min-width: 76px; font-size: 10.5px; }
+      .pill-wrap { padding-left: 28px; }
+      .req-sub-label { padding-left: 0; }
+    }
+
+    @media (max-width: 360px) {
+      .page { padding-left: 0.75rem; padding-right: 0.75rem; }
+      .hero-title { font-size: 17px; }
+      .hero-content { padding: 32px 14px 38px; }
+      .card-body { padding: 14px; }
+      .info-label { min-width: 68px; }
+      .pill { font-size: 11.5px; padding: 9px 11px; }
     }
   </style>
 </head>
@@ -435,7 +463,7 @@
 
   <!-- Hero -->
   <div class="hero">
-    <img class="hero-bg" src="images/브랜드.PNG" alt="브랜드 배너 사진">
+    <img class="hero-bg" src="images/브랜드.PNG" alt="브랜드 배너 사진" loading="eager">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-badge">Collaboration Guideline</div>
@@ -460,7 +488,7 @@
         에스더버니와의 첫 콜라보레이션 제품을 가장 먼저 만나보세요.
       </p>
       <div class="brand-img-wrap" style="min-height:unset;">
-        <img src="images/브랜드2.PNG" alt="asif CALIE 브랜드 사진">
+        <img src="images/브랜드2.PNG" alt="asif CALIE 브랜드 사진" loading="lazy">
       </div>
       <a class="brand-link" href="https://asif-calie.com/" target="_blank">
         <span class="brand-link-label">브랜드 링크 바로가기</span>
@@ -478,10 +506,10 @@
     <div class="card-body">
       <div style="display:flex; gap:8px; margin-bottom:12px;">
         <div class="brand-img-wrap" style="min-height:unset; margin-bottom:0; flex:1;">
-          <img src="images/제공1.PNG" alt="제품 사진 1">
+          <img src="images/제공1.PNG" alt="제품 사진 1" loading="lazy">
         </div>
         <div class="brand-img-wrap" style="min-height:unset; margin-bottom:0; flex:1;">
-          <img src="images/제공2.PNG" alt="제품 사진 2">
+          <img src="images/제공2.PNG" alt="제품 사진 2" loading="lazy">
         </div>
       </div>
       <div class="info-grid">
